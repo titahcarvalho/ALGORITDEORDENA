@@ -28,3 +28,28 @@ void Insercao(TipoItem *A, int n){
         A[j+1] = x;
     }
 }
+//Shellsort
+void Shellsort(TipoItem *A, TipoIndice n){
+    int i, j;
+    int h = 1;
+    TipoItem x;
+    do{
+        h=h*3+1;
+    }while(h<n);
+    do {
+        h/=3;
+        for(i = h+1;i<= n; i++){
+            x = A[i];
+            j = i;
+            while(A[j-h].Chave>x.Chave){
+                A[j] = A[j-i];
+                j-=h;
+                if(j<= h)
+                    goto L999;
+                }
+                L999: A[j]=x;
+               }
+            }while (h != 1); //falso, término do algoritmo
+}
+
+//heapsort
